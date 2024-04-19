@@ -86,7 +86,7 @@ exports.getQuizResult = async (req, res, next) => {
         const currentTime = new Date();
 
         // Checking if current time is past the end time or the extra five minutes
-        if (currentTime > endTime || currentTime >= extraFiveMinutes) {
+        if (currentTime > endTime && currentTime >= extraFiveMinutes) {
             // If so, return the correct answer index
             const correctAnswerIndex = quiz.rightAnswer;
             res.status(200).json({
