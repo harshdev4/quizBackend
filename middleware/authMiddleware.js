@@ -14,7 +14,7 @@ exports.limiter = rateLimit({
 
 // authenticate user middleware
 exports.authenticateUser = (req, res, next) => {
-    // Check for JWT token in request headers
+    // Check for JWT token in cookie
     const token = req.cookies.token;
     if (!token) {
         return res.status(401).json({ message: 'Unauthorized: Missing token' });
