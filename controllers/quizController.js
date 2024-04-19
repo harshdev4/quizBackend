@@ -29,8 +29,8 @@ exports.getActiveQuiz = async (req, res, next) => {
 
 // Controller function to create a new quiz
 exports.createQuiz = async (req, res) => {
-    // Getting token from header
-    const token = req.headers.authorization;
+    // Getting token from cookie
+    const token = req.cookies.token;
 
     // decoding the token
     const decoded = jwt.decode(token);
